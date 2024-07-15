@@ -1,0 +1,19 @@
+data <- read.csv("C:/Users/lab.NUISB.000/Desktop/finalized.csv")
+
+model <- lm(Crop_Production_Change ~ Temperature_Change + sea_level + Greenhouse_Gas_Emissions, data = data)
+summary(model)
+
+plot(data$Temperature_Change, data$Crop_Production_Change,
+     xlab = "Temperature Change", ylab = "Crop Production Change",
+     main = "Temperature Change vs Crop Production Change")
+
+plot(data$sea_level, data$Crop_Production_Change,
+     xlab = "Sea Level", ylab = "Crop Production Change",
+     main = "Sea Level vs Crop Production Change")
+
+plot(data$Greenhouse_Gas_Emissions, data$Crop_Production_Change,
+     xlab = "Greenhouse Gas Emissions", ylab = "Crop Production Change",
+     main = "Greenhouse Gas Emissions vs Crop Production Change")
+
+# View the summary of the linear regression model
+summary(model)
